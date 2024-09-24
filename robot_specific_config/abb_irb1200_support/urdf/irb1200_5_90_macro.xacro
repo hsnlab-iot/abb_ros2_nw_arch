@@ -2,7 +2,7 @@
 <robot xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find abb_resources)/urdf/common_materials.xacro"/>
 
-  <xacro:macro name="abb_irb1200_5_90" params="parent id xyz:= '-1 1.2 2'">
+  <xacro:macro name="abb_irb1200_5_90" params="parent id xyz:= '-1 1.2 2' L2_network_id:=radiodot-network_level L1_network_id:=radiodot-device_level L2_id:=radiodot_L2 L1_id:=radiodot_L1">
     <!-- link list -->
     <joint name="irb1200590_${id}_joint" type="fixed">
       <parent link="${parent}" />
@@ -232,7 +232,6 @@
     </joint>
        
        <yang>
-            <!-- Raspberry pi 4B network topology -->
             <network>
                 <network-id>${L2_network_id}</network-id>
                 <supporting-network>
